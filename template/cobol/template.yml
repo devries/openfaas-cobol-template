@@ -1,0 +1,5 @@
+language: cobol
+fprocess: ./handler
+welcome_message: |
+  This is a very experimental COBOL handler using the Classic OpenFaaS
+  template.
