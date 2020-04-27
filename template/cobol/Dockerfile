@@ -4,6 +4,10 @@ FROM devries/cobol:latest
 # Allows you to add additional packages via build-arg
 ARG ADDITIONAL_PACKAGE
 
+RUN apt-get update \
+    && apt-get install -y ca-certificates ${ADDITIONAL_PACKAGE} \
+    && rm -rf /var/lib/apt/lists/
+
 WORKDIR /cobol/src/handler
 COPY . .
 
